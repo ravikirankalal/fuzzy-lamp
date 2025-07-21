@@ -1,0 +1,28 @@
+[package]
+name = "fuzzy-lamp"
+version = "0.1.0"
+authors = ["Your Name <your.email@example.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yourusername/fuzzy-lamp"
+description = "A Rust library for fuzzy string matching and analysis"
+keywords = ["fuzzy", "string", "matching", "search", "text"]
+categories = ["algorithms", "text-processing"]
+readme = "README.md"
+documentation = "https://docs.rs/fuzzy-lamp"
+
+[dependencies]
+plotters = { version = "0.3.6", default-features = false, features = ["bitmap_backend"] }
+thiserror = "1"
+serde = { version = "1", features = ["derive"], optional = true }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "benchmark"
+harness = false
+
+[features]
+default = []
+serde = ["dep:serde"]
